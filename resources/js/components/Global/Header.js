@@ -45,17 +45,13 @@ export default class Header extends Component {
                         <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <span className="dropdown-item dropdown-header">Opciones</span>
                             <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                <i className="fas fa-envelope mr-2"></i> Usuario
-                            </a>
+                            <NavLink to="/usuario/editar_contrasena" className="dropdown-item">
+                                <i className="fas fa-unlock mr-2"></i> Cambiar Contraseña
+                            </NavLink>
                             <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                <i className="fas fa-users mr-2"></i> Cambiar Contraseña
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
+                            <NavLink to="/acerca_de" className="dropdown-item">
                                 <i className="fas fa-address-card mr-2"></i> Acerca de
-                            </a>
+                            </NavLink>
                             <div className="dropdown-divider"></div>
                             <a href="#" className="dropdown-item">
                                 <i className="fas fa-book mr-2"></i> Manual de usuario
