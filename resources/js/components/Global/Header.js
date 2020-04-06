@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
+import axios from 'axios';
 
 export default class Header extends Component {
     constructor() {
         super();
+        this.state = {
+            message: '',
+            enviado: false
+        }
+        this.handleLogoutAction = this.handleLogoutAction.bind(this);
+    }
+
+    handleLogoutAction() {
+        axios.post(window.App.appURL + 'api/logout').then(res =>
+            window.location.replace(window.App.appURL + 'login')
+        )
+            .catch(error => {
+
+                this.setState({
+
+                    message: error.response.data.errors
+                })
+
+            })
     }
 
     render() {
@@ -34,14 +54,16 @@ export default class Header extends Component {
                             </a>
                             <div className="dropdown-divider"></div>
                             <a href="#" className="dropdown-item">
-                                <i className="fas fa-file mr-2"></i> Acerca de
+                                <i className="fas fa-address-card mr-2"></i> Acerca de
                             </a>
                             <div className="dropdown-divider"></div>
                             <a href="#" className="dropdown-item">
-                                <i className="fas fa-file mr-2"></i> Manual de usuario
+                                <i className="fas fa-book mr-2"></i> Manual de usuario
                             </a>
                             <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item dropdown-footer">Información de usuario</a>
+                            <a href="#" className="dropdown-item text-danger" onClick={this.handleLogoutAction}>
+                                <i className="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
+                            </a>
                         </div>
                     </li>
                 </ul>
