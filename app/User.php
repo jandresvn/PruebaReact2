@@ -2,13 +2,17 @@
 
 namespace App;
 
+
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Caffeinated\Shinobi\Traits\ShinobiTrait;
+use App\Notifications\PasswordResetNotification;
+
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, ShinobiTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nombre', 'apellidos', 'email', 'password', 'estado'
     ];
 
     /**
@@ -36,4 +40,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    // public function sendPasswordResetNotification($token)
+    // {
+    //     $this->notify(new PasswordResetNotification($token));
+    // }
 }

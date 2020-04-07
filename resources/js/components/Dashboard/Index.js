@@ -23,7 +23,7 @@ export default class Index extends Component {
                 <section className="content">
                     <div className="card">
                         <div className="card-body">
-                            BIENVENIDO(A)!
+                            BIENVENIDO(A)
                         </div>
                     </div>
                 </section>

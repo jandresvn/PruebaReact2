@@ -5,6 +5,7 @@ import ErrorMessage from "../Global/Messages/ErrorMessage";
 import SuccessMessage from '../Global/Messages/SuccessMessage';
 import Loader from '../Global/Loader';
 import { addBusinessDays } from 'date-fns';
+import { NavLink } from "react-router-dom";
 
 export default class Change_Password extends Component {
     _isMounted = false;
@@ -154,7 +155,7 @@ export default class Change_Password extends Component {
                             </div>
                             <div className="col-sm-6">
                                 <ol className="breadcrumb float-sm-right">
-                                    <li className="breadcrumb-item"><a href="#">Inicio</a></li>
+                                    <li className="breadcrumb-item"><NavLink to="/">Inicio</NavLink></li>
                                     <li className="breadcrumb-item active">Cambiar Contraseña</li>
                                 </ol>
                             </div>
@@ -167,7 +168,7 @@ export default class Change_Password extends Component {
                         <div className="row">
                             <SuccessMessage show_message={this.state.show_message} title={'Contraseña Modificada'}
                                 message={'Contraseña modificada correctamente'} redirectTo={'/'} />
-                        
+
                             <div className="col-lg-12 grid-margin stretch-card">
                                 <div className="card">
                                     <div className="card-body">
