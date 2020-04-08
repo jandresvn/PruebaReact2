@@ -44,19 +44,23 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+public function store(Request $request)
     {
         $this->validate($request, [
-            'name'    =>'required|string|max:80',
+            'nombre'    =>'required|string|max:80',
+            'apellidos' =>'required|string|max:100',
             'email'     =>'required|string|unique:users|max:100',
             'password'  =>'required|string|max:80|min:6',
+            'estado'    => 'required|boolean',
             'rol'      => 'required|exists:roles,id',
         ]);
 
         $usuario = new User([
-            'name'    =>$request->input('nombre'),
+            'nombre'    =>$request->input('nombre'),
+            'apellidos' =>$request->input('apellidos'),
             'email'     =>$request->input('email'),
             'password'=>bcrypt($request->input('password')),
+            'estado'    =>$request->input('estado'),
         ]);
         $usuario->save();
         $usuario->roles()->sync($request->input('rol'));
@@ -104,17 +108,25 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+public function update(Request $request, $id)
     {
         $usuario = User::find($id);
 
         $this->validate($request, [
-            'name'    =>'required|string|max:80',
+            'nombre'    =>'required|string|max:80',
+            'apellidos' =>'required|string|max:100',
             'email'     =>'required|string|max:100|unique:users,email,'.$usuario->id,
+            'estado'    => 'required|boolean',
             'rol'      => 'required|exists:roles,id',]);
 
+
+
         $usuario->nombre= $request->nombre;
+        $usuario->apellidos= $request->apellidos;
         $usuario->email= $request->email;
+        $usuario->estado= $request->estado;
+       // $usuario->password= $request->password;
+
         $usuario->save();
         $usuario->roles()->sync($request->rol);
 

@@ -8,6 +8,9 @@ import Index from './components/Dashboard/Index';
 import Login from './components/Auth/Login'
 
 //Imports Usuarios
+import Usuarios from './components/Usuarios/Index'
+import UsuariosAdd from './components/Usuarios/Add'
+import UsuariosEdit from './components/Usuarios/Edit'
 import UsuariosContrasena from './components/Usuarios/Change_Password'
 
 //Acerca de
@@ -39,7 +42,10 @@ const AppRoutes = () =>
 
 
             {/* Usuarios */}
-            <Route exact path="/usuario/editar_contrasena" render={() =>validateRoute(<UsuariosContrasena/>,true)}  />
+            <Route exact path="/usuarios" render={() => validateRoute(<Usuarios />, window.App.can_usuario_index)} />
+            <Route exact path="/usuarios/nuevo" render={() => validateRoute(<UsuariosAdd />, window.App.can_usuario_create)} />
+            <Route exact path="/usuarios/editar/:id" render={(props) => validateRoute(<UsuariosEdit {...props} />, window.App.can_usuario_edit)} />
+            <Route exact path="/usuario/editar_contrasena" render={() => validateRoute(<UsuariosContrasena />, true)} />
 
             {/* Acerca de */}
             <Route exact path="/acerca_de" render={() => validateRoute(<AcercaDe />, true)} />

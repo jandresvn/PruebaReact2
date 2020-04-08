@@ -12,19 +12,23 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = new \App\User([
-            'name' => 'José Andres',
-            'email' =>'a@gmail.com',
-            'password'=> bcrypt('123456'),
-          ]);
+            'nombre' => 'Andrés',
+            'apellidos' => 'Vega Núñez',
+            'email' => 'a@gmail.com',
+            'password' => bcrypt('admin'),
+            'estado' => 1
+        ]);
 
         $user->save();
         $user->roles()->sync(1);
 
         $user = new \App\User([
-            'name' => 'Juan Pablo',
+            'nombre' => 'Juan Pablo',
+            'apellidos' => 'Morales Rodriguez',
             'email' => 'j@gmail.com',
             'password' => bcrypt('123456'),
-          ]);
+            'estado' => 1
+        ]);
 
         $user->save();
         $user->roles()->sync(2);
