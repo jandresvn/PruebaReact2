@@ -173,7 +173,7 @@ export default class Index extends Component {
                     <div className="container-fluid">
                         <div className="row mb-2">
                             <div className="col-sm-6">
-                                <h1>Usuarios</h1>
+                                <h1>Listado de Usuarios</h1>
                             </div>
                             <div className="col-sm-6">
                                 <ol className="breadcrumb float-sm-right">
@@ -191,8 +191,6 @@ export default class Index extends Component {
                             <div className="col-lg-12 grid-margin stretch-card">
                                 <div className="card">
                                     <div className="card-body">
-                                        <h4 className="card-title">Listado de Usuarios</h4><br></br>
-
                                         <Charge ready={this.state.ready} />
 
                                         {

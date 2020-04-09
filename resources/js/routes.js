@@ -13,6 +13,11 @@ import UsuariosAdd from './components/Usuarios/Add'
 import UsuariosEdit from './components/Usuarios/Edit'
 import UsuariosContrasena from './components/Usuarios/Change_Password'
 
+//Imports Roles
+import Roles from './components/Roles/Index'
+import RoleAdd from './components/Roles/Add'
+import RolesEdit from './components/Roles/Edit'
+
 //Acerca de
 import AcercaDe from './components/Auth/AcercaDe'
 
@@ -46,6 +51,11 @@ const AppRoutes = () =>
             <Route exact path="/usuarios/nuevo" render={() => validateRoute(<UsuariosAdd />, window.App.can_usuario_create)} />
             <Route exact path="/usuarios/editar/:id" render={(props) => validateRoute(<UsuariosEdit {...props} />, window.App.can_usuario_edit)} />
             <Route exact path="/usuario/editar_contrasena" render={() => validateRoute(<UsuariosContrasena />, true)} />
+
+            {/* Roles */}
+            <Route exact path="/roles" render={() => validateRoute(<Roles />, window.App.can_role_index)} />
+            <Route exact path="/roles/nuevo" render={() => validateRoute(<RoleAdd />, window.App.can_role_create)} />
+            <Route exact path="/roles/editar/:id" render={(props) => validateRoute(<RolesEdit {...props} />, window.App.can_role_edit_permisos)} />
 
             {/* Acerca de */}
             <Route exact path="/acerca_de" render={() => validateRoute(<AcercaDe />, true)} />

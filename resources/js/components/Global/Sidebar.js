@@ -160,7 +160,7 @@ export default class Sidebar extends Component {
                                     <a href="#mantenimientos" className="nav-link" style={this.state.mante_activo ? { color: '#4d83ff' } : {}}>
                                         <i className="nav-icon fas fa-tools"></i>
                                         <p>
-                                            Mantenientos
+                                            Mantenimientos
                                     <i className="right fas fa-angle-left"></i>
                                         </p>
                                     </a>
@@ -208,7 +208,7 @@ export default class Sidebar extends Component {
                                 </li>) : ''
                             }
 
-                            {this.state.show_mante ? (
+                            {this.state.show_admin ? (
                                 <li className="nav-item has-treeview">
                                     <a href="#mantenimientos" className="nav-link" style={this.state.admin_activo ? { color: '#4d83ff' } : {}}>
                                         <i className="nav-icon fas fa-users-cog"></i>
