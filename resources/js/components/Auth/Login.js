@@ -78,7 +78,7 @@ export default class Login extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <ErrorMessage message={this.state.message.email} />
+
                             <div className="input-group mb-3">
                                 <input className="form-control" type="password" placeholder="Contraseña" autoComplete="current-password" id="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                                 <div className="input-group-append">
@@ -87,6 +87,7 @@ export default class Login extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <ErrorMessage message={this.state.message.email} />
                             <ErrorMessage message={this.state.message.password} />
                             <div className="row">
                                 <div className="col-6">

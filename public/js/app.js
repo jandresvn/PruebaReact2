@@ -109674,9 +109674,7 @@ var Login = /*#__PURE__*/function (_Component) {
         className: "input-group-text"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "fas fa-envelope"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Global_Messages_ErrorMessage_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        message: this.state.message.email
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-group mb-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
@@ -109694,6 +109692,8 @@ var Login = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "fas fa-lock"
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Global_Messages_ErrorMessage_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        message: this.state.message.email
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Global_Messages_ErrorMessage_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
         message: this.state.message.password
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
